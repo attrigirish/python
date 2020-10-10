@@ -1,0 +1,251 @@
+What is DBMS?
+
+A DBMS is a dedicated software which is used to store and process large volumes of data. A DBMS can be of following types:
+
+1. Relatinal Database Management System
+2. Network Database Management System
+3. Hierarchical Database Management System
+
+
+
+What is RDBMS?
+
+A RDBMS is a database software which stores data in tabular formats. These tables are linked with each other through some common key in between them. 
+
+Some Popular RDBMSs
+
+1. Microsoft SQL Server
+2. MySQL
+3. Oracle etc.
+
+
+
+What is MySQL?
+
+MySQL is an open source relational database management system. 
+
+
+
+Starting Mysql
+
+1. Click on start.
+2. Search 'mysql command line client'. 
+3. Type your password.
+
+
+MySQL commands
+---------------
+
+1. Data Definition Language commands
+2. Data Manipulation Language commands
+3. Data Control Language Commands
+
+
+
+Data Definition Language (DDL)
+
+1. create database
+
+Syntax: create database <database-name>;
+
+e.g.: create database aptech;
+
+
+2. show databases
+
+Syntax: show databases;
+
+e.g.: show databases;
+
+
+3. use 
+
+Syntax: use <database-name>;
+
+e.g.: use aptech;
+
+
+4. create table 
+
+Syntax: 
+
+create table <table-name>
+(
+	<field-name> <type> [constraints],
+	<field-name> <type> [constraints],
+	<field-name> <type> [constraints]
+)
+
+e.g.
+
+create table Student
+(
+	id int,
+	name varchar(20),
+	class varchar(20),
+	fees float
+);
+
+
+MySQL Data Types
+
+A. int
+B. mediumint
+C. smallint
+D. bigint
+E. float
+F. double
+G. decimal(m,n)
+H. varchar(m)
+I. char(m)
+J. text
+K. boolean
+L. date
+M. datetime
+
+
+5. desc 
+
+Syntax: desc <table-name>
+
+e.g. desc student; 
+
+
+6. alter table
+
+Syntax:
+
+alter table <table-name>
+[add <field-name> <data-type>]
+[modify <field-name> <data-type>]
+[drop <field-name>];
+
+e.g.
+
+#To Add a column
+
+alter table student
+add duration int;
+
+desc student;
+
+
+#To Delete a column
+
+alter table student
+drop duration;
+
+desc student;
+
+
+#To Update a column
+
+alter table student
+modify name varchar(50);
+
+
+
+Data Manipulation Language Commands (DML)
+
+1. insert
+
+Syntax:
+
+insert into <table-name>
+values(value1,value2,value3,..);
+
+E.g.
+
+insert into student
+values(1,'Vibhu','Python',16000);
+
+
+2. select
+
+Syntax:
+
+select <column1,column2,..> from <table-name>
+
+E.g.
+
+select id,name,course,fees from student;
+
+or
+
+select * from student;
+
+
+Filtering Records
+-----------------
+
+select <column(s)> from <table-name> where <condition>;
+
+e.g.
+
+select * from student where course='AWT';
+
+select * from student where fees>=16000;
+
+
+3. delete
+
+Syntax:
+
+delete from <tablename> where <condition>;
+
+e.g.
+
+delete from student where id=1;
+
+
+4. update
+
+Syntax:
+
+update <table-name> 
+set <column-name>=<value>, ..
+where <condition>
+
+
+
+Summary
+--------
+
+To Create Database
+-------------------
+create database aptech;
+
+
+To Open Database 
+----------------
+use aptech;
+
+
+To Create Table
+---------------
+create table student
+(
+	id int,
+	name varchar(20)
+);
+
+
+To Insert Record
+----------------
+insert into student values(1,'Ankit');
+
+
+To Dispaly Record
+-----------------
+select * from student;
+
+
+To Delete Record
+-----------------
+delete from student where id=1;
+
+
+To Update Record
+----------------
+update student set name='Ankit Kumar' where id=1;
+
